@@ -1,4 +1,6 @@
 :root {
+    --txt-primary: rgb(236, 88, 29);
+    --transition: all .3s ease-in-out;
 }
 
 * {
@@ -7,3 +9,113 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+    min-height: 200vh;
+    font-family: 'poppins', Arial, Helvetica, sans-serif;
+}
+
+.navbar__container {
+    width: 100%;
+    padding: 10px 20px;
+    box-shadow: 0 3px 3px #00000018;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+.navbar__container.active {
+    padding: 20px 30px;
+}
+
+.brand {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.txt__primary {
+    color: var(--txt-primary);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav__link {
+    color: #000;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+/* hamburger */
+.hamburger {
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+}
+
+.hamburger input {
+    display: none;
+}
+
+.hamburger svg {
+    height: 3em;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--txt-primary);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked+svg {
+    transform: rotate(-45deg);
+}
+
+.hamburger input:checked+svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        gap: 4rem;
+        box-shadow: 0 -3px 3px #0000002f;
+    }
+
+    nav.active {
+        right: 0;
+        transition: var(--transition);
+    }
+}
