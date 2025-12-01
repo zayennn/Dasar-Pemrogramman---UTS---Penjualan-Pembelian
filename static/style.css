@@ -262,6 +262,16 @@ nav ul a {
     transform: translate(0, -5px);
 }
 
+@media screen and (max-width: 992px) {
+    .products__cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 768px) {
+    .products__cards {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* history */
 .table__history {
@@ -292,7 +302,7 @@ tbody tr:nth-child(odd) {
     }
 
     td {
-       display: block; 
+        display: block;
     }
 
     td::before {
