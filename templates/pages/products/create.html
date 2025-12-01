@@ -1,0 +1,30 @@
+{% extends 'layouts/index.html' %}
+
+{% block breadcrumb %}
+    <a href="{{ url_for('home.index') }}">product lists</a>
+    <i class="fa-solid fa-arrow-right"></i>
+    <span>create product</span>
+{% endblock %}
+
+{% block content %}
+    <form action="">
+        <div class="form__input image">
+            <label for="image" class="file-label">Choose Image</label>
+            <input type="file" id="image" name="image" required>
+        </div>        
+        <div class="form__input">
+            <label for="name">name</label>
+            <input type="text" class="form__control" required>
+        </div>
+        <div class="form__input">
+            <label for="price">price</label>
+            <input type="number" class="form__control" required>
+        </div>
+        <div class="btn__group">
+            <button class="btn btn__primary">create product</button>
+            <a href="{{ url_for('products.index') }}">
+                <button type="button" class="btn btn__danger">back</button>
+            </a>
+        </div>
+    </form>
+{% endblock %}

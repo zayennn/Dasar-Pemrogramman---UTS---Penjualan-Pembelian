@@ -14,19 +14,19 @@
     <nav>
         <ul>
             <a href="{{ url_for('home.index') }}" class="nav__link">
-                <li class="nav__list {% if request.endpoint == 'home.index' %}active{% endif %}">
+                <li class="nav__list {% if request.endpoint.startswith('home.')%}active{% endif %}">
                     <i class="fa-solid fa-house"></i>
                     <span>home</span>
                 </li>
             </a>
             <a href="{{ url_for('products.index') }}" class="nav__link">
-                <li class="nav__list {% if request.endpoint == 'products.index' %}active{% endif %}">
+                <li class="nav__list {% if request.endpoint.startswith('products.')%}active{% endif %}">
                     <i class="fa-solid fa-utensils"></i>
                     <span>products</span>
                 </li>
             </a>
             <a href="{{ url_for('history.index') }}" class="nav__link">
-                <li class="nav__list {% if request.endpoint == 'history.index' %}active{% endif %}">
+                <li class="nav__list {% if request.endpoint.startswith('history.')%}active{% endif %}">
                     <i class="fa-solid fa-book-bookmark"></i>
                     <span>history</span>
                 </li>

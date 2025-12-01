@@ -195,6 +195,7 @@ nav ul a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+    margin-top: 20px;
 }
 
 .product__card {
@@ -260,6 +261,67 @@ nav ul a {
 
 .btn__group .btn:hover {
     transform: translate(0, -5px);
+}
+
+.btn__add-product {
+    text-decoration: none;
+}
+
+.btn.btn__secondary {
+    min-width: 100px;
+    padding: 13px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: var(--transition);
+    display: block;
+    margin-left: auto;
+}
+
+/* create product */
+form {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 3px 3px 5px #0000000e;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+.form__input {
+    margin-bottom: 20px;
+}
+
+.form__input label {
+    display: block;
+    text-transform: capitalize;
+}
+
+.form__control {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1.5px solid #00000034;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.form__input.image {
+    display: block;
+    width: 100%;
+    padding: 4rem 1rem;
+    border: 2px dashed #00000034;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: #666;
+}
+
+form .btn__group {
+    width: 30%;
 }
 
 @media screen and (max-width: 992px) {
