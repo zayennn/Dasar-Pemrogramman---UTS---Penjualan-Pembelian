@@ -1,0 +1,36 @@
+<aside>
+    <div class="brand">
+        <a href="/">
+            <h1>
+                <i>
+                    P&<span>D.</span>
+                </i>
+            </h1>
+        </a>
+    </div>
+
+    <div class="line__brand"></div>
+
+    <nav>
+        <ul>
+            <a href="{{ url_for('home.index') }}" class="nav__link">
+                <li class="nav__list">
+                    <i class="fa-solid fa-house"></i>
+                    <span>home</span>
+                </li>
+            </a>
+            <a href="{{ url_for('products.index') }}" class="nav__link">
+                <li class="nav__list">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>products</span>
+                </li>
+            </a>
+            <a href="{{ url_for('history.index') }}" class="nav__link">
+                <li class="nav__list">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    <span>history</span>
+                </li>
+            </a>
+        </ul>
+    </nav>
+</aside>
