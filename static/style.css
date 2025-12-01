@@ -84,7 +84,7 @@ nav ul a {
     text-decoration: none;
 }
 
-@media screen and ( max-width : 768px ) {
+@media screen and (max-width : 768px) {
     aside {
         width: 100px;
     }
@@ -130,15 +130,15 @@ nav ul a {
 
 
 /* content */
-.content  {
+.content {
     width: calc(100% - 250px);
     min-height: 100vh;
     margin-left: 250px;
     padding: 2rem;
 }
 
-@media screen and ( max-width : 768px ) {
-    .content  {
+@media screen and (max-width : 768px) {
+    .content {
         width: calc(100% - 100px);
         margin-left: 100px;
     }
@@ -186,7 +186,7 @@ nav ul a {
     font-weight: 600;
     color: #000;
     transition: var(--transition);
-    text-transform: capitalize; 
+    text-transform: capitalize;
 }
 
 
@@ -271,9 +271,11 @@ nav ul a {
     overflow: hidden;
 }
 
-th, td {
+th,
+td {
     padding: 1rem;
     text-transform: capitalize;
+    text-align: left;
 }
 
 thead tr {
@@ -282,4 +284,19 @@ thead tr {
 
 tbody tr:nth-child(odd) {
     background-color: #f9f9f9;
+}
+
+@media screen and (max-width : 920px) {
+    thead {
+        display: none;
+    }
+
+    td {
+       display: block; 
+    }
+
+    td::before {
+        content: attr(data-table) " : ";
+        font-weight: 500;
+    }
 }
