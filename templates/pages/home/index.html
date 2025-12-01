@@ -1,5 +1,20 @@
 {% extends 'layouts/index.html' %}
 
+{% block breadcrumb %}
+    <span>Home</span>
+{% endblock %}
+
 {% block content %}
-    <h1>ini halaman home</h1>
+<div class="cards">
+    <div class="card">
+        <i class="fa-solid fa-utensils"></i>
+        <h3>total products</h3>
+        <p>100</p>
+    </div>
+    <div class="card">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>total purchase</h3>
+        <p>100</p>
+    </div>
+</div>
 {% endblock %}

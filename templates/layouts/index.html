@@ -18,6 +18,10 @@
     {% include 'layouts/components/sidebar.html' %}
 
     <div class="content">
+        <div class="breadcrumb">
+            {% block breadcrumb %}{% endblock %}
+        </div>        
+
         {% block content %}
     
         {% endblock %}

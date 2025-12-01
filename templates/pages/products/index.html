@@ -1,5 +1,26 @@
 {% extends 'layouts/index.html' %}
 
+{% block breadcrumb %}
+    <!-- <a href="{{ url_for('home.index') }}">Home</a>
+    <i class="fa-solid fa-arrow-right"></i> -->
+    <span>product lists</span>
+{% endblock %}
+
 {% block content %}
-    <h1>ini halaman products</h1>
+    <div class="products__cards">
+        <div class="product__card">
+            <div class="image__card">
+                <img src="{{ url_for('static', filename='images/bakso.jpg') }}" alt="Bakso Mercon">
+            </div>
+            <div class="desc__card">
+                <h3>Bakso Mercon</h3>
+                <p>Rp 10.000</p>
+                <div class="btn__group">
+                    <button class="btn btn__primary">add to cart</button>
+                    <button class="btn btn__secondary">edit</button>
+                    <button class="btn btn__danger">delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

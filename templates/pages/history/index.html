@@ -1,5 +1,37 @@
 {% extends 'layouts/index.html' %}
 
+{% block breadcrumb %}
+    <span>history</span>
+{% endblock %}
+
 {% block content %}
-    <h1>ini halaman history</h1>
+    <table class="table__history">
+        <thead>
+            <tr>
+                <th>no</th>
+                <th>name</th>
+                <th>product</th>
+                <th>price</th>
+                <th>date</th>
+                <th>status</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>masbro</td>
+                <td>bakso</td>
+                <td>Rp 10.000</td>
+                <td>10/10/2025</td>
+                <td>completed</td>
+                <td>
+                    <div class="btn__group">
+                        <button class="btn btn__secondary">edit</button>
+                        <button class="btn btn__danger">delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock %}

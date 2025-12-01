@@ -3,7 +3,7 @@
         <a href="/">
             <h1>
                 <i>
-                    P&<span>D.</span>
+                    P&<span>B.</span>
                 </i>
             </h1>
         </a>
@@ -14,19 +14,19 @@
     <nav>
         <ul>
             <a href="{{ url_for('home.index') }}" class="nav__link">
-                <li class="nav__list">
+                <li class="nav__list {% if request.endpoint == 'home.index' %}active{% endif %}">
                     <i class="fa-solid fa-house"></i>
                     <span>home</span>
                 </li>
             </a>
             <a href="{{ url_for('products.index') }}" class="nav__link">
-                <li class="nav__list">
+                <li class="nav__list {% if request.endpoint == 'products.index' %}active{% endif %}">
                     <i class="fa-solid fa-utensils"></i>
                     <span>products</span>
                 </li>
             </a>
             <a href="{{ url_for('history.index') }}" class="nav__link">
-                <li class="nav__list">
+                <li class="nav__list {% if request.endpoint == 'history.index' %}active{% endif %}">
                     <i class="fa-solid fa-book-bookmark"></i>
                     <span>history</span>
                 </li>
