@@ -46,17 +46,14 @@ def update(id) :
         
         cursor = mysql.connection.cursor()
         
-        # Jika ada gambar baru yang diupload
         if image and image.filename != '':
             filename = secure_filename(image.filename)
             upload_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
             image.save(upload_path)
             
-            # Update dengan gambar baru
             cursor.execute("UPDATE products SET name = %s, price = %s, image = %s WHERE id = %s", 
                          (name, price, filename, id))
         else:
-            # Update tanpa mengubah gambar
             cursor.execute("UPDATE products SET name = %s, price = %s WHERE id = %s", 
                          (name, price, id))
         
@@ -65,7 +62,6 @@ def update(id) :
         
         return redirect(url_for('products.index'))
     
-    # GET request - tampilkan form dengan data produk
     cursor = mysql.connection.cursor()
     cursor.execute("SELECT * FROM products WHERE id = %s", (id,))
     product = cursor.fetchone()
