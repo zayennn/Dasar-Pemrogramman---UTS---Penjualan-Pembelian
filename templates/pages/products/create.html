@@ -7,18 +7,18 @@
 {% endblock %}
 
 {% block content %}
-    <form action="">
+    <form action="{{ url_for('products.create') }}" method="POST" enctype="multipart/form-data">
         <div class="form__input image">
-            <label for="image" class="file-label">Choose Image</label>
+            <label for="image" class="file__label">Choose Image</label>
             <input type="file" id="image" name="image" required>
         </div>        
         <div class="form__input">
             <label for="name">name</label>
-            <input type="text" class="form__control" required>
+            <input type="text" name="name" class="form__control" required>
         </div>
         <div class="form__input">
             <label for="price">price</label>
-            <input type="number" class="form__control" required>
+            <input type="number" name="price" class="form__control" required>
         </div>
         <div class="btn__group">
             <button class="btn btn__primary">create product</button>

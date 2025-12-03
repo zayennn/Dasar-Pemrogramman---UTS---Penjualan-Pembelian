@@ -1,0 +1,39 @@
+{% extends 'layouts/index.html' %}
+
+{% block breadcrumb %}
+    <a href="{{ url_for('products.index') }}">product lists</a>
+    <i class="fa-solid fa-arrow-right"></i>
+    <span>edit product</span>
+{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('products.update', id=product[0]) }}" method="POST" enctype="multipart/form-data">
+        <div class="form__input image">
+            <label for="image" class="file__label update">Choose Image</label>
+            {% if product[3] %}
+                <div style="margin-bottom: 10px;">
+                    <img src="{{ url_for('static', filename='images/' ~ product[3]) }}" 
+                         alt="{{ product[1] }}" 
+                         style="max-width: 200px; max-height: 200px; border-radius: 8px; filter: grayscale(1);">
+                    <p style="margin-top: 5px; font-size: 12px; color: #666;">Current image</p>
+                </div>
+            {% endif %}
+            <input type="file" id="image" name="image">
+            <small style="display: block; margin-top: 5px; color: #666;">Leave empty to keep current image</small>
+        </div>        
+        <div class="form__input">
+            <label for="name">name</label>
+            <input type="text" name="name" class="form__control" value="{{ product[1] }}" required>
+        </div>
+        <div class="form__input">
+            <label for="price">price</label>
+            <input type="number" name="price" class="form__control" value="{{ product[2] }}" required>
+        </div>
+        <div class="btn__group">
+            <button class="btn btn__primary">update product</button>
+            <a href="{{ url_for('products.index') }}">
+                <button type="button" class="btn btn__danger">back</button>
+            </a>
+        </div>
+    </form>
+{% endblock %}
