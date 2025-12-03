@@ -71,3 +71,22 @@ def update(id) :
         return redirect(url_for('products.index'))
     
     return render_template('pages/products/update.html', product=product)
+
+@products_bp.route('/delete-product/<int:id>', methods=['POST'])
+def destroy(id) :
+    cursor = mysql.connection.cursor()
+    
+    cursor.execute("SELECT image FROM products WHERE id = %s", (id,))
+    product = cursor.fetchone()
+    
+    if product:
+        cursor.execute("DELETE FROM products WHERE id = %s", (id,))
+        mysql.connection.commit()
+        
+        if product[0]:
+            image_path = os.path.join(current_app.config['UPLOAD_FOLDER'], product[0])
+            if os.path.exists(image_path):
+                os.remove(image_path)
+    
+    cursor.close()
+    return redirect(url_for('products.index'))

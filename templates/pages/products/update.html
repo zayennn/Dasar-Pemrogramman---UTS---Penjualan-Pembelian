@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    <form action="{{ url_for('products.update', id=product[0]) }}" method="POST" enctype="multipart/form-data">
+    <form class="create__update" action="{{ url_for('products.update', id=product[0]) }}" method="POST" enctype="multipart/form-data">
         <div class="form__input image">
             <label for="image" class="file__label update">Choose Image</label>
             {% if product[3] %}
