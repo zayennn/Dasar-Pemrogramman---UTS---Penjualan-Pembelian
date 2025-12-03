@@ -288,7 +288,7 @@ nav ul a {
 }
 
 /* create product */
-form {
+form.create__update {
     width: 100%;
     background-color: #fff;
     box-shadow: 3px 3px 5px #0000000e;
@@ -346,6 +346,10 @@ input[type="file"] {
 
 form .btn__group {
     width: 30%;
+}
+
+form.delete {
+    width: max-content;
 }
 
 @media screen and (max-width: 992px) {

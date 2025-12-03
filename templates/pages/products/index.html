@@ -25,7 +25,9 @@
                         <a href="{{ url_for('products.update', id=product[0]) }}">
                             <button class="btn btn__secondary">edit</button>
                         </a>
-                        <button class="btn btn__danger">delete</button>
+                        <form class="delete" action="{{ url_for('products.destroy', id=product[0]) }}" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this product?');">
+                            <button type="submit" class="btn btn__danger">delete</button>
+                        </form>
                     </div>
                 </div>
             </div>
